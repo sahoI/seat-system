@@ -13,6 +13,8 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('/event','EventsController@create');
+Route::get('/event','EventsController@show');
+Route::get('/event/{id}','EventsController@getBookmark');
+Route::post('/event/{id}','EventsController@edit');
+Route::delete('/event/{id}','EventsController@delete');
